@@ -61,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                     'Bienvenido a Sentir',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 32,
+                      fontSize: 38,
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -121,7 +121,7 @@ class HomeScreen extends StatelessWidget {
                                 builder: (context) => const RemindersScreen()));
                       }),
                   const SizedBox(
-                    height: 48,
+                    height: 24,
                   ),
                 ],
               ),

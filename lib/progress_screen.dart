@@ -10,7 +10,7 @@ class ProgressScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Visualización de Progreso',
-          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 48),
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 38),
         ),
       ),
       body: const Center(

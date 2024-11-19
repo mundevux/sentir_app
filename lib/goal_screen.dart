@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sentir_app/widgets/custom_button.dart';
 
 class GoalScreen extends StatelessWidget {
   const GoalScreen({super.key});
@@ -19,7 +20,11 @@ class GoalScreen extends StatelessWidget {
             const TextField(
               decoration: InputDecoration(labelText: 'Escribe tu nueva meta'),
             ),
-            ElevatedButton(onPressed: () {}, child: const Text('Guardar Meta'))
+            CustomButton(
+              text: 'Guardar Entrada',
+              icon: Icons.save,
+              onPressed: () => {},
+            )
           ],
         ),
       ),
