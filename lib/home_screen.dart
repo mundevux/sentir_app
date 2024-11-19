@@ -3,6 +3,7 @@ import 'package:sentir_app/daily_entry_screen.dart';
 import 'package:sentir_app/goal_screen.dart';
 import 'package:sentir_app/progress_screen.dart'; // Nueva importación
 import 'package:sentir_app/reminders_screen.dart'; // Nueva importación
+import 'package:sentir_app/widgets/custom_button.dart'; // Importación de Widget correspondiente al boton personalizado.
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,6 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[50],
       body: Column(
         children: <Widget>[
           // Imagen que ocupa la mitad superior de la pantalla
@@ -43,12 +45,15 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(
+            height: 64,
+          ),
           // Contenido de la mitad inferior de la pantalla
           Expanded(
             flex: 1,
             child: Padding(
-              padding: const EdgeInsets.only(
-                  top: 32.0, bottom: 16.0, left: 24.0, right: 24.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -56,156 +61,67 @@ class HomeScreen extends StatelessWidget {
                     'Bienvenido a Sentir',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 84,
+                      fontSize: 32,
                     ),
                   ),
                   const SizedBox(height: 8),
                   const Text(
                     'Explora tus emociones y establece metas para el bienestar emocional.',
                     style: TextStyle(
-                      fontSize: 32,
+                      fontSize: 18,
                       color: Colors.black54,
                     ),
                   ),
                   const Spacer(),
-                  // Botón "Registro Diario"
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5))),
+                  // Botones
+                  CustomButton(
+                      text: 'Registro Diario',
+                      icon: Icons.edit,
                       onPressed: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const DailyEntryScreen(),
-                          ),
-                        );
-                      },
-                      child: const Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          Icon(Icons.edit),
-                          SizedBox(width: 8),
-                          Padding(
-                            padding: EdgeInsets.only(top: 12, bottom: 12),
-                            child: Text(
-                              'Registro Diario',
-                              style: TextStyle(
-                                fontSize: 48,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DailyEntryScreen()));
+                      }),
+                  const SizedBox(
+                    height: 16,
                   ),
-                  const SizedBox(height: 16),
-                  // Botón "Registrar Metas"
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5))),
+                  CustomButton(
+                      text: 'Registrar Metas',
+                      icon: Icons.flag,
                       onPressed: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const GoalScreen(),
-                          ),
-                        );
-                      },
-                      child: const Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          Icon(Icons.flag),
-                          SizedBox(width: 8),
-                          Padding(
-                            padding: EdgeInsets.only(top: 12, bottom: 12),
-                            child: Text(
-                              'Registrar Metas',
-                              style: TextStyle(
-                                fontSize: 48,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const GoalScreen()));
+                      }),
+                  const SizedBox(
+                    height: 16,
                   ),
-                  const SizedBox(height: 16),
-                  // Botón "Visualización de Progreso"
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5))),
+                  CustomButton(
+                      text: 'Visualización de Progreso',
+                      icon: Icons.show_chart,
                       onPressed: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ProgressScreen(),
-                          ),
-                        );
-                      },
-                      child: const Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          Icon(Icons.show_chart),
-                          SizedBox(width: 8),
-                          Padding(
-                            padding: EdgeInsets.only(top: 12, bottom: 12),
-                            child: Text(
-                              'Visualización de Progreso',
-                              style: TextStyle(
-                                fontSize: 48,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ProgressScreen()));
+                      }),
+                  const SizedBox(
+                    height: 16,
                   ),
-                  const SizedBox(height: 16),
-                  // Botón "Recordatorios"
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5))),
+                  CustomButton(
+                      text: 'Recordatorios',
+                      icon: Icons.alarm,
                       onPressed: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const RemindersScreen(),
-                          ),
-                        );
-                      },
-                      child: const Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          Icon(Icons.alarm),
-                          SizedBox(width: 8),
-                          Padding(
-                            padding: EdgeInsets.only(top: 12, bottom: 12),
-                            child: Text(
-                              'Recordatorios',
-                              style: TextStyle(
-                                fontSize: 48,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const RemindersScreen()));
+                      }),
+                  const SizedBox(
+                    height: 48,
                   ),
                 ],
               ),

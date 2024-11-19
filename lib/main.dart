@@ -12,6 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        primarySwatch: Colors.blue,
+        hintColor: Colors.orange,
         fontFamily: 'Sinteca',
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

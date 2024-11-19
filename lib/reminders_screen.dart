@@ -7,6 +7,7 @@ class RemindersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue[50],
         title: const Text(
           'Recordatorios',
           style: TextStyle(fontWeight: FontWeight.w600, fontSize: 48),

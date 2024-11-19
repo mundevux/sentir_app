@@ -6,6 +6,7 @@ class DailyEntryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[50],
       appBar: AppBar(
         title: const Text('Hoy me siento',
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 48)),
