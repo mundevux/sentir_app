@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sentir_app/home_screen.dart';
+import 'package:sentir_app/services/reminder_service.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await initNotifications();
+
   runApp(const MyApp());
 }
 
@@ -13,9 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        hintColor: Colors.orange,
         fontFamily: 'Sinteca',
-        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       title: 'Sentir - Diario personal de bienestar',
       home: const HomeScreen(),

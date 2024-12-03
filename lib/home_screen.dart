@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sentir_app/daily_entry_screen.dart';
 import 'package:sentir_app/goal_screen.dart';
-import 'package:sentir_app/progress_screen.dart'; // Nueva importación
-import 'package:sentir_app/reminders_screen.dart'; // Nueva importación
-import 'package:sentir_app/widgets/custom_button.dart'; // Importación de Widget correspondiente al boton personalizado.
+import 'package:sentir_app/progress_screen.dart';
+import 'package:sentir_app/reminders_screen.dart';
+import 'package:sentir_app/widgets/custom_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -45,15 +45,12 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            height: 64,
-          ),
+          const SizedBox(height: 32),
           // Contenido de la mitad inferior de la pantalla
           Expanded(
             flex: 1,
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -61,68 +58,67 @@ class HomeScreen extends StatelessWidget {
                     'Bienvenido a Sentir',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 38,
+                      fontSize: 24,
                     ),
                   ),
                   const SizedBox(height: 8),
                   const Text(
                     'Explora tus emociones y establece metas para el bienestar emocional.',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 10,
                       color: Colors.black54,
                     ),
                   ),
                   const Spacer(),
                   // Botones
                   CustomButton(
-                      text: 'Registro Diario',
-                      icon: Icons.edit,
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const DailyEntryScreen()));
-                      }),
-                  const SizedBox(
-                    height: 16,
+                    text: 'Registro Diario',
+                    icon: Icons.edit,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DailyEntryScreen()),
+                      );
+                    },
                   ),
+                  const SizedBox(height: 8),
                   CustomButton(
-                      text: 'Registrar Metas',
-                      icon: Icons.flag,
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const GoalScreen()));
-                      }),
-                  const SizedBox(
-                    height: 16,
+                    text: 'Registrar Metas',
+                    icon: Icons.flag,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const GoalScreen()),
+                      );
+                    },
                   ),
+                  const SizedBox(height: 8),
                   CustomButton(
-                      text: 'Visualización de Progreso',
-                      icon: Icons.show_chart,
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ProgressScreen()));
-                      }),
-                  const SizedBox(
-                    height: 16,
+                    text: 'Visualización de Progreso',
+                    icon: Icons.show_chart,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProgressScreen()),
+                      );
+                    },
                   ),
+                  const SizedBox(height: 8),
                   CustomButton(
-                      text: 'Recordatorios',
-                      icon: Icons.alarm,
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const RemindersScreen()));
-                      }),
-                  const SizedBox(
-                    height: 24,
+                    text: 'Recordatorios',
+                    icon: Icons.alarm,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RemindersScreen()),
+                      );
+                    },
                   ),
+                  const SizedBox(height: 24),
                 ],
               ),
             ),

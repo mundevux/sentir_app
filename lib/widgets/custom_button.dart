@@ -21,21 +21,21 @@ class CustomButton extends StatelessWidget {
           foregroundColor: Colors.white,
           backgroundColor: Colors.blue,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(100),
           ),
         ),
         onPressed: onPressed,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Icon(icon, size: 24, color: Colors.white), // Color del ícono
+            Icon(icon, size: 18, color: Colors.white), // Color del ícono
             const SizedBox(width: 8),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12),
               child: Text(
                 text,
                 style: const TextStyle(
-                  fontSize: 18,
+                  fontSize: 10,
                   fontWeight: FontWeight.w600,
                 ),
               ),
